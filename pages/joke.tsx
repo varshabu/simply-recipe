@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
@@ -89,7 +89,7 @@ const StyledJoke = styled.div`
   margin-bottom: ${Spacings.medium};
 `;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
     `${process.env.FOOD_API}/food/jokes/random?apiKey=${process.env.FOOD_API_KEY}`,
   );
