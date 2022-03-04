@@ -23,6 +23,10 @@ const Nav = styled.nav`
   align-items: center;
   border-bottom: 2px solid #ffd977;
   background-color: white;
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 100;
 `;
 
 const StyledHeader = styled.h1`

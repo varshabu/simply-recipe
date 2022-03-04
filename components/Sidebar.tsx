@@ -19,13 +19,8 @@ const Sidebar = ({ open }: SidebarProps) => {
         </Link>
       </li>
       <li>
-        <Link href="/">
+        <Link href="/recipes">
           <a>Recipes</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Categories</a>
         </Link>
       </li>
       <li>
