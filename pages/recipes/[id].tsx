@@ -22,9 +22,10 @@ const RecipeDtails = ({ data }: any) => {
           <DishType>
             <StyledDishTypeTitle>Dish Type: </StyledDishTypeTitle>
             <div>
-              {data.dishTypes.map((type: string) => {
-                return <StyledTag key={type}>{type}</StyledTag>;
-              })}
+              {data.dishTypes &&
+                data.dishTypes.map((type: string) => {
+                  return <StyledTag key={type}>{type}</StyledTag>;
+                })}
             </div>
           </DishType>
           <StyledDescription>{parse(data.summary)}</StyledDescription>
@@ -45,23 +46,21 @@ const RecipeDtails = ({ data }: any) => {
       <RecipeContentSection>
         <article>
           <InstructionsHeader>Instructions</InstructionsHeader>
-          {data.analyzedInstructions.length !== 0 ? (
+          {data.analyzedInstructions.length !== 0 &&
             data.analyzedInstructions[0].steps.map((step: any) => {
               return <RecipeStep key={step.number} step={step} />;
-            })
-          ) : (
-            <p>Instructions not available</p>
-          )}
+            })}
         </article>
         <article>
           <div>
             <InstructionsHeader>Ingredients</InstructionsHeader>
             <div>
-              {data.extendedIngredients.map((item: any) => {
-                return (
-                  <IngredientItem key={item.id}>{item.name}</IngredientItem>
-                );
-              })}
+              {data.extendedIngredients &&
+                data.extendedIngredients.map((item: any) => {
+                  return (
+                    <IngredientItem key={item.id}>{item.name}</IngredientItem>
+                  );
+                })}
             </div>
           </div>
         </article>
