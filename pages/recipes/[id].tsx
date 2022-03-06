@@ -147,18 +147,23 @@ export const getStaticPaths = async () => {
   );
   const data = await res.json();
 
-  const paths =
-    data.results &&
-    data.results.map((post: { id: any }) => {
-      return {
-        params: {
-          id: `${post.id}`,
-        },
-      };
-    });
+  // const paths = data.results.map((post: { id: any }) => {
+  //   return {
+  //     params: {
+  //       id: `${post.id}`,
+  //     },
+  //   };
+  // });
 
   return {
-    paths,
+    paths:
+      data.results.map((post: { id: any }) => {
+        return {
+          params: {
+            id: `${post.id}`,
+          },
+        };
+      }) || [],
     fallback: false,
   };
 };
