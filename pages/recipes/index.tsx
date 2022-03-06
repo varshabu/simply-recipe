@@ -28,7 +28,6 @@ const RecipesContainer = styled.section`
   padding: 0 ${Spacings.xxxxLarge};
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
   margin-top: ${Spacings.medium};
 
   ${MediaQueries.mobileOnly} {

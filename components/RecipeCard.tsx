@@ -11,19 +11,19 @@ type RecipeCardProps = {
 
 const RecipeCard = ({ recipe }: RecipeCardProps) => {
   return (
-    <RecipeCardContainer>
-      <Image src={recipe.image} alt={recipe.title} width={300} height={200} />
-      <Title>{recipe.title}</Title>
-      <Link href={'/recipes/'}>
-        <a>Read More</a>
-      </Link>
-    </RecipeCardContainer>
+    <Link href={`/recipes/${recipe.id}`} passHref>
+      <RecipeCardContainer>
+        <Image src={recipe.image} alt={recipe.title} width={300} height={200} />
+        <Title>{recipe.title}</Title>
+      </RecipeCardContainer>
+    </Link>
   );
 };
 
 export default RecipeCard;
 
 const RecipeCardContainer = styled.div`
+  cursor: pointer;
   flex: 0 0 300px;
   margin: 10px;
   border: 1px solid #ccc;
@@ -33,4 +33,10 @@ const RecipeCardContainer = styled.div`
 const Title = styled.p`
   font-size: 18px;
   margin: ${Spacings.medium} ${Spacings.xSmall};
+`;
+
+const StyledButton = styled.div`
+  padding: 10px 8px;
+  background-color: #ffd977;
+  display: inline;
 `;
