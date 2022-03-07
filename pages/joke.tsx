@@ -38,6 +38,7 @@ const BgWrapper = styled.div`
   width: 100vw;
   overflow: hidden;
   z-index: -1;
+  opacity: 0.8;
 `;
 
 const CardWrapper = styled.div`

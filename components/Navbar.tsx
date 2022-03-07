@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Spacings from '../tokens/Spacings';
@@ -6,7 +7,9 @@ import Burger from './Burger';
 const Navbar: FC = () => {
   return (
     <Nav>
-      <StyledHeader>SimplyRecipe</StyledHeader>
+      <Link href="/" passHref>
+        <StyledHeader>SimplyRecipe</StyledHeader>
+      </Link>
       <Burger />
     </Nav>
   );
