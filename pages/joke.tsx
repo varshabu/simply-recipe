@@ -94,7 +94,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
     `${process.env.FOOD_API}/food/jokes/random?apiKey=${process.env.FOOD_API_KEY}`,
   );
-  const data = await res.json();
+  let data = await res.json();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
